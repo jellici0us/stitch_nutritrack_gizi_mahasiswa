@@ -1,0 +1,274 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NutriTrack | Vitality Editorial</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#002204",
+                    "secondary-container": "#fc820c",
+                    "primary": "#006419",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#78dc77",
+                    "surface-container-low": "#f3f3f3",
+                    "on-secondary-fixed": "#311300",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "on-surface": "#1a1c1c",
+                    "on-surface-variant": "#40493d",
+                    "on-tertiary-fixed": "#0f2000",
+                    "tertiary-fixed": "#b9f474",
+                    "on-primary-container": "#cbffc2",
+                    "on-background": "#1a1c1c",
+                    "surface-container-highest": "#e2e2e2",
+                    "primary-container": "#127f27",
+                    "inverse-on-surface": "#f1f1f1",
+                    "tertiary-fixed-dim": "#9ed75b",
+                    "surface-container": "#eeeeee",
+                    "outline-variant": "#bfcaba",
+                    "on-secondary-container": "#5e2c00",
+                    "on-tertiary-fixed-variant": "#2e4f00",
+                    "secondary-fixed": "#ffdcc6",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f9f9f9",
+                    "primary-fixed": "#94f990",
+                    "surface-variant": "#e2e2e2",
+                    "outline": "#707a6c",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#386000",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "background": "#f9f9f9",
+                    "surface-tint": "#006e1c",
+                    "inverse-primary": "#78dc77",
+                    "on-secondary-fixed-variant": "#723600",
+                    "surface-dim": "#dadada",
+                    "on-primary-fixed-variant": "#005313",
+                    "inverse-surface": "#2f3131",
+                    "secondary-fixed-dim": "#ffb786",
+                    "secondary": "#964900",
+                    "tertiary-container": "#4a7b00",
+                    "on-tertiary-container": "#d6ffa5",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Manrope', sans-serif;
+        background-color: #f9f9f9;
+        color: #1a1c1c;
+      }
+      h1, h2, h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-[0_12px_32px_rgba(26,28,28,0.06)] h-20">
+<div class="flex justify-between items-center px-8 h-full max-w-7xl mx-auto w-full">
+<div class="text-2xl font-black text-green-900 italic font-headline tracking-tight" style="">NutriTrack</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-green-700 border-b-2 border-green-600 pb-1 font-headline font-bold tracking-tight" href="#" style="">Beranda</a>
+<a class="text-zinc-600 hover:text-green-600 transition-colors font-headline font-bold tracking-tight" href="#" style="">Pencatatan Makanan</a>
+<a class="text-zinc-600 hover:text-green-600 transition-colors font-headline font-bold tracking-tight" href="#" style="">Analisis Gizi</a>
+<a class="text-zinc-600 hover:text-green-600 transition-colors font-headline font-bold tracking-tight" href="#" style="">Rekomendasi</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 rounded-full font-bold text-sm transition-transform active:scale-90 text-green-800 hover:opacity-80" style="">Masuk</button>
+<button class="px-6 py-2 rounded-full font-bold text-sm bg-primary text-on-primary transition-transform active:scale-90 shadow-md" style="">Daftar</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden py-24 md:py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="relative z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container/10 text-secondary font-bold text-xs uppercase tracking-widest mb-6" style=""></span>
+<h1 class="text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] mb-8 tracking-tight" style="">
+<span class="text-primary italic" style="">Energi untuk Fokusmu.</span>
+</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed max-w-lg mb-10" style="">Website ini bertujuan untuk membantu pengguna dalam mencatat asupan makanan harian, menghitung kebutuhan energi, memantau status gizi, serta memberikan evaluasi dan rekomendasi pola makan agar pengguna dapat menerapkan pola hidup sehat secara konsisten.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-2 shadow-lg hover:opacity-90 transition-all" style="">
+                            Mulai Catat Gratis
+                            <span class="material-symbols-outlined" style="">arrow_forward</span>
+</button>
+<button class="bg-surface-container-lowest border-2 border-outline-variant/15 px-8 py-4 rounded-full font-bold text-lg hover:bg-surface-container-low transition-all" style="">
+                            Lihat Fitur
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-primary-fixed/30 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-12 -left-12 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl"></div>
+<div class="relative rounded-3xl overflow-hidden shadow-2xl transform rotate-2">
+<img class="w-full aspect-[4/5] object-cover" data-alt="Modern high-end nutrition bowl with avocado and greens on a minimalist white table with soft morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADi6CN84jPUAznuYjF-9fD35FmKzk7RgFCZOuPeezc1BVZzg29r5XfNzBnIPRrnmMMP1YS-O8BTjL_EWCmM_KVgzKNgXqdKaf7R2A3DqUNxrwwGo42F6FMEUYoLX-hfQK-YcFANEZGf0x39we9swJMYuhZxz_fMPGrY9ViJ4WA00zkwjUj5gukVJSEtiAwqjXbSWguQPaMGs8GQkAklHon1Wf70ZX2AUc58Ujfcx4rhrDXkPed98EqW5OYL7EvLFZHMcxtAFuDS4_G" style="">
+<div class="absolute bottom-6 left-6 right-6 p-6 bg-white/70 backdrop-blur-xl rounded-2xl">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1" style="">Fokus Saat Ini</p>
+<p class="text-2xl font-bold text-on-surface" style="">Peningkatan Kognitif</p>
+</div>
+<div class="text-right">
+<span class="text-3xl font-black text-primary" style="">84%</span>
+</div>
+</div>
+<div class="mt-4 h-2 w-full bg-primary-fixed rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[84%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Benefits -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16">
+<h2 class="text-4xl font-bold tracking-tight mb-4" style="">Mengapa NutriTrack?</h2>
+<p class="text-on-surface-variant max-w-xl" style="">Membantu mahasiswa mengatur pola makan berbasis data untuk hidup yang lebih sehat dan terarah.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 p-10 bg-surface-container-lowest rounded-3xl flex flex-col justify-between min-h-[320px]">
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill" style="">bolt</span>
+<div>
+<h3 class="text-2xl font-bold mb-3" style="">Tracking</h3>
+<p class="text-on-surface-variant max-w-md" style="">Tracking asupan harian jadi lebih mudah dan efisien. </p>
+</div>
+</div>
+<div class="p-10 bg-secondary-container text-on-secondary-container rounded-3xl flex flex-col justify-between min-h-[320px]">
+<span class="material-symbols-outlined text-4xl" data-weight="fill" style="">psychology</span>
+<div>
+<h3 class="text-2xl font-bold mb-3" style="">Energi Fokus</h3>
+<p class="opacity-90" style="">Wawasan yang menghubungkan diet Anda secara langsung dengan performa mental dan daya tahan belajar Anda.</p>
+</div>
+</div>
+<div class="p-10 bg-surface-container-lowest rounded-3xl flex flex-col justify-between min-h-[320px]">
+<span class="material-symbols-outlined text-primary text-4xl" style="">savings</span>
+<div>
+<h3 class="text-2xl font-bold mb-3" style="">Rekomendasi Menu</h3>
+<p class="text-on-surface-variant" style="">Rekomendasi makanan dengan bahan pangan yang beragam.</p>
+</div>
+</div>
+<div class="md:col-span-2 relative overflow-hidden rounded-3xl group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Group of diverse students studying together in a brightly lit modern library with healthy snacks on the table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGPiKXVYkjkxfyc7c8e8sXqBI8T5x5NR9JsaQV0sGIY2NPAfhKAG3nE3aj-ICAf891f4F-0M0RkQWPg0B8P_RWSbU6XR78CYAVHrbqVjyXy-Sn8AABpOMEd9xQ6itFAnkJAGe7psi3-VBC72zqC3pPBvYM1jrQwqsAkgFOD5Mt4Nejqv8IMMcPjzQRlgKE0KpPpIJ3wy-5zX66CnPCSf4Pn98bElWjHA1joi_ocRB87OAVOZamhBOV1bomOaTNwkx9I3tvesgBVnfz" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent flex flex-col justify-end p-10">
+<h3 class="text-3xl font-bold text-white mb-2" style="">Dirancang untuk Kesibukan</h3>
+<p class="text-white/80 max-w-sm" style="">Dari sesi belajar larut malam hingga kuliah pagi, kami siap membantu Anda.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-black mb-6" style="">Hidup sehat jadi lebih mudah.</h2>
+<div class="h-1.5 w-24 bg-secondary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+<!-- Steps -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-3xl text-primary" style="">app_registration</span>
+</div>
+<h4 class="text-xl font-bold mb-2" style="">Daftar</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Bergabunglah dengan komunitas Vitality Editorial dengan satu ketukan.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-3xl text-primary" style="">analytics</span>
+</div>
+<h4 class="text-xl font-bold mb-2" style="">Input Info</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Beri tahu kami tujuan, jadwal, dan intensitas belajar Anda.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-3xl text-primary" style="">track_changes</span>
+</div>
+<h4 class="text-xl font-bold mb-2" style="">Lacak</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Ambil foto makanan. AI kami akan mengurus perhitungan makronya.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-2xl bg-secondary-container flex items-center justify-center mb-6 shadow-lg">
+<span class="material-symbols-outlined text-3xl text-on-secondary-container" data-weight="fill" style="">auto_awesome</span>
+</div>
+<h4 class="text-xl font-bold mb-2" style="">Optimasi</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Terima kiat yang dipersonalisasi untuk tidur dan fokus yang lebih baik.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-8">
+<div class="max-w-7xl mx-auto rounded-[3rem] bg-on-surface p-12 md:p-24 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary rounded-full blur-[100px]"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary-container rounded-full blur-[100px]"></div>
+</div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter" style="">Siap hidup lebih berenergi?</h2>
+<p class="text-xl text-white/70 max-w-2xl mx-auto mb-12" style="">Bergabunglah dengan 50.000+ mahasiswa yang sudah meningkatkan kesuksesan akademik mereka dengan NutriTrack.</p>
+<button class="bg-primary text-on-primary px-12 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-2xl" style="">
+                        Buat Akun Gratis Anda
+                    </button>
+<p class="mt-6 text-white/40 text-sm font-medium" style="">Tidak perlu kartu kredit. Batalkan kapan saja.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-100 py-12 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto w-full gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-lg font-bold text-zinc-900 font-headline" style="">NutriTrack</div>
+<p class="text-zinc-500 font-body text-sm tracking-wide text-center md:text-left" style="">© 2024 NutriTrack Vitality Editorial. Hak cipta dilindungi undang-undang.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 font-body text-sm tracking-wide transition-opacity" href="#" style="">Kebijakan Privasi</a>
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 font-body text-sm tracking-wide transition-opacity" href="#" style="">Ketentuan Layanan</a>
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 font-body text-sm tracking-wide transition-opacity" href="#" style="">Dukungan Kontak</a>
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 font-body text-sm tracking-wide transition-opacity" href="#" style="">Jurnal</a>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-zinc-200 flex items-center justify-center hover:bg-primary/10 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-zinc-600 group-hover:text-primary transition-colors" style="">public</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-zinc-200 flex items-center justify-center hover:bg-primary/10 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-zinc-600 group-hover:text-primary transition-colors" style="">share</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

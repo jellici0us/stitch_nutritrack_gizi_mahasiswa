@@ -1,0 +1,266 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#002204",
+                        "secondary-container": "#fc820c",
+                        "primary": "#006419",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#78dc77",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary-fixed": "#311300",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "on-surface-variant": "#40493d",
+                        "on-tertiary-fixed": "#0f2000",
+                        "tertiary-fixed": "#b9f474",
+                        "on-primary-container": "#cbffc2",
+                        "on-background": "#1a1c1c",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-container": "#127f27",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-fixed-dim": "#9ed75b",
+                        "surface-container": "#eeeeee",
+                        "outline-variant": "#bfcaba",
+                        "on-secondary-container": "#5e2c00",
+                        "on-tertiary-fixed-variant": "#2e4f00",
+                        "secondary-fixed": "#ffdcc6",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9f9",
+                        "primary-fixed": "#94f990",
+                        "surface-variant": "#e2e2e2",
+                        "outline": "#707a6c",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#386000",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "surface-tint": "#006e1c",
+                        "inverse-primary": "#78dc77",
+                        "on-secondary-fixed-variant": "#723600",
+                        "surface-dim": "#dadada",
+                        "on-primary-fixed-variant": "#005313",
+                        "inverse-surface": "#2f3131",
+                        "secondary-fixed-dim": "#ffb786",
+                        "secondary": "#964900",
+                        "tertiary-container": "#4a7b00",
+                        "on-tertiary-container": "#d6ffa5",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .vitality-glass {
+            backdrop-filter: blur(12px);
+            background: rgba(249, 249, 249, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/20">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl shadow-[0_12px_32px_rgba(26,28,28,0.06)] h-20 flex items-center">
+<nav class="flex justify-between items-center px-8 h-20 max-w-7xl mx-auto w-full font-['Plus_Jakarta_Sans'] font-bold tracking-tight">
+<div class="text-2xl font-black text-green-900 dark:text-green-100 italic" style="">NutriTrack</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors" href="#" style="">Beranda</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors" href="#" style="">Pecatatan Makanan</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors" href="#" style="">Analisis Gizi</a>
+<a class="text-green-700 dark:text-green-400 border-b-2 border-green-600 pb-1" href="#" style="">Rekomendasi</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-zinc-600 font-semibold px-4 py-2 hover:opacity-80 transition-all duration-300 scale-95 active:scale-90" style="">Masuk</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full hover:opacity-80 transition-all duration-300 scale-95 active:scale-90" style="">Daftar</button>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Hero Recommendation Section -->
+<section class="mb-16">
+<div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+<div class="max-w-2xl">
+<h1 class="font-headline text-5xl font-extrabold tracking-tight text-on-surface mb-4" style="">Rekomendasi Pola Makan Harian</h1>
+<p class="text-xl text-on-surface-variant font-medium leading-relaxed" style="">Berdasarkan data asupan dan aktivitas Anda, berikut rekomendasi pola makan yang dapat membantu menjaga energi dan fokus sepanjang hari.</p>
+</div>
+<div class="bg-tertiary-container/10 px-6 py-3 rounded-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome" style="">auto_awesome</span>
+<span class="font-bold text-tertiary" style="">Kesesuaian: 94%</span>
+</div>
+</div>
+<!-- Main Recommendation Bento -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Primary Insight -->
+<div class="md:col-span-8 bg-surface-container-lowest p-8 rounded-xl vitality-glass border border-outline-variant/15 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+<div class="relative z-10">
+<span class="bg-primary-container text-on-primary-container text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6 inline-block" style="">Rekomendasi hari ini</span>
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-4" style="">Menjaga Energi dan Konsentrasi</h2>
+<p class="text-on-surface-variant text-lg mb-8 max-w-xl" style="">Data menunjukkan energi Anda cenderung menurun pada sore hari. Disarankan mengonsumsi makanan dengan karbohidrat kompleks dan sayuran agar energi tetap stabil dan membantu menjaga konsentrasi.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block text-xs font-bold text-outline uppercase mb-1" style="">Energi</span>
+<span class="text-xl font-extrabold text-on-surface" style="">2.150 <span class="text-sm font-normal" style="">kkal</span></span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block text-xs font-bold text-outline uppercase mb-1" style="">Protein</span>
+<span class="text-xl font-extrabold text-on-surface" style="">112g</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block text-xs font-bold text-outline uppercase mb-1" style="">Serat</span>
+<span class="text-xl font-extrabold text-on-surface" style="">34g</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block text-xs font-bold text-outline uppercase mb-1" style="">Perkiraan biaya makan</span>
+<span class="text-xl font-extrabold text-on-surface" style="">$7.50 <span class="text-sm font-normal" style="">/hari</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Tip -->
+<div class="md:col-span-4 bg-secondary-container text-on-secondary-container p-8 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl mb-6" data-icon="lightbulb" style="">lightbulb</span>
+<h3 class="text-2xl font-bold font-headline mb-4" style="">Tips Hemat</h3>
+<p class="font-medium opacity-90" style="">Pilih bahan makanan seperti beras merah dan kacang-kacangan untuk memenuhi kebutuhan gizi dengan biaya lebih terjangkau.</p>
+</div>
+<button class="mt-8 flex items-center gap-2 font-bold group" style="">
+                        Lihat daftar belanja&nbsp;<span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="arrow_forward" style="">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Daily Meal Plan Ideas -->
+<section class="mb-16">
+<div class="flex items-center justify-between mb-10">
+<h2 class="font-headline text-3xl font-extrabold tracking-tight" style="">Ide Menu Harian</h2>
+<div class="h-[2px] flex-grow mx-8 bg-surface-container-highest rounded-full hidden md:block"></div>
+<button class="text-primary font-bold flex items-center gap-2" style="">
+                    Perbarui Rencana <span class="material-symbols-outlined" data-icon="refresh" style="">refresh</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Breakfast Card -->
+<div class="group">
+<div class="relative h-64 w-full mb-6 overflow-hidden rounded-xl bg-surface-container-highest">
+<img alt="overnight oats" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="creamy overnight oats in a glass jar topped with fresh blueberries and a sprinkle of chia seeds, soft natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmg-GBKNH0YMiCMCMlbyMf9UdhTc-uv2ydeXbAVmV1C2lxRsD0uyAeMuDyRgSL_Am2YbydGBrGoNTa6Lrbl1cNijTbbE9o5aRFDIoMKJrnDg_Y7-9RVu3KiYSP7ywXtp7sT0bDDic-_C0YhnDOdCtZx0AgGGfCYSU2I1le1wY4LMjk_Dqd-ycH1u1XGePmE9LB-uL0McmFTxe8agHzHpJxPGfoQ2oNJ-T2gTwJJnhXwraW8mfT4mj3eYFl3nLKYz_6yEY9wTueJiYM" style="">
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg font-bold text-xs" style="">SARAPAN</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-xl font-bold font-headline group-hover:text-primary transition-colors" style="">Overnight Oats Penambah Energi</h4>
+<span class="text-primary font-bold" style="">$0.85</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4 leading-relaxed" style="">Kaya akan serat kompleks dan ramah persiapan awal. Tidak butuh usaha di pagi hari.</p>
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-xs font-bold text-outline" style=""><span class="material-symbols-outlined text-sm" data-icon="schedule" style="">schedule</span> 5m</span>
+<span class="flex items-center gap-1 text-xs font-bold text-outline" style=""><span class="material-symbols-outlined text-sm" data-icon="restaurant" style="">restaurant</span> 380 kkal</span>
+</div>
+</div>
+<!-- Lunch Card -->
+<div class="group">
+<div class="relative h-64 w-full mb-6 overflow-hidden rounded-xl bg-surface-container-highest">
+<img alt="buddha bowl" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="vibrant buddha bowl with roasted sweet potatoes, chickpeas, kale, and a creamy tahini dressing in a ceramic bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt0tT8zY6Og7yLbRxA8XMjBpft7bgHNb_aU2PV3U9BkontQzSn1BnAPweJFerSz67-K5fp-rW0jwQv-W-gl0yTRqqNa5JgpS3Qp6z90TlGgTAECYn8es0jpJHcICD1x7QHhc1FFQmHScOG4rrDuJuVEQaNRox0ie5gjDXTw2LyIIh9QFbe3oA8SJE9LCoO981wK6abBm4HjZo5lE2H0PatDkkZdY3HWXcVUlPnOJJWuaBawq7yzuDuMDu66rBDC7tKmnKkQEs5t2pT" style="">
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg font-bold text-xs" style="">MAKAN SIANG</div>
+<div class="absolute bottom-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-bold text-xs flex items-center gap-1" style="">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span> Paling Populer
+                        </div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-xl font-bold font-headline group-hover:text-primary transition-colors" style="">Mangkuk Vitalitas Chickpea Panggang</h4>
+<span class="text-primary font-bold" style="">$1.95</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4 leading-relaxed" style="">Bahan bakar nabati protein tinggi menggunakan bahan dasar dapur. Seimbang agar tidak lemas di sore hari.</p>
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-xs font-bold text-outline" style=""><span class="material-symbols-outlined text-sm" data-icon="schedule" style="">schedule</span> 15m</span>
+<span class="flex items-center gap-1 text-xs font-bold text-outline" style=""><span class="material-symbols-outlined text-sm" data-icon="restaurant" style="">restaurant</span> 540 kkal</span>
+</div>
+</div>
+<!-- Dinner Card -->
+<div class="group">
+<div class="relative h-64 w-full mb-6 overflow-hidden rounded-xl bg-surface-container-highest">
+<img alt="one pan pasta" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="one-pot vegetable pasta with cherry tomatoes, spinach, and garlic in a rustic pan, moody evening lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH-2REeun7IwVQtvFnQf4Vd_q6MSAz395FK3kTCHbPYQbXBZcpyFcV8Z5dl84pmXSNvyi8fnH7rHFjbR7bJ6E7D7IpcyRwyJajgs2fw76rsXYtaB4Djl3ytcHqiNtoesCoHpX26TzUknIWBergk0jqjXbokthKqTgR5gfHZROUlP7TtHMZZ5pqdUo25kegpXgx2aSFT2siYH6wwvtKTxZS_1IKOAqMxhtsBTA_6QMy-NL9JQD0_q5Ba7iyKfBb14k6LPccMnkWNBxD" style="">
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg font-bold text-xs" style="">MAKAN MALAM</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-xl font-bold font-headline group-hover:text-primary transition-colors" style="">Fusilli Bayam &amp; Bawang Putih</h4>
+<span class="text-primary font-bold" style="">$2.20</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4 leading-relaxed" style="">Pembersihan minimal, mikronutrisi maksimal. Gunakan bayam beku untuk penghematan maksimal.</p>
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-xs font-bold text-outline" style=""><span class="material-symbols-outlined text-sm" data-icon="schedule" style="">schedule</span> 12m</span>
+<span class="flex items-center gap-1 text-xs font-bold text-outline" style=""><span class="material-symbols-outlined text-sm" data-icon="restaurant" style="">restaurant</span> 620 kkal</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Supplement & Hydration -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="opacity" style="">opacity</span>
+</div>
+<h3 class="text-2xl font-bold font-headline" style="">Strategi Hidrasi</h3>
+</div>
+<p class="text-on-surface-variant mb-6" style="">Asupan air yang Anda lacak 20% di bawah target untuk waktu saat ini. Cobalah aturan <strong>"Sip Kuliah"</strong>: minum 100ml setiap 20 menit saat fokus bekerja.</p>
+<div class="w-full bg-primary-fixed h-4 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 65%;"></div>
+</div>
+<div class="flex justify-between mt-2 font-bold text-xs text-outline uppercase">
+<span class="" style="">1.4L Dilacak</span>
+<span class="" style="">2.5L Target</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="pill" style="">pill</span>
+</div>
+<h3 class="text-2xl font-bold font-headline" style="">Tips</h3>
+</div>
+<p class="text-on-surface-variant mb-6" style="">Dengan berkurangnya sinar matahari minggu ini, sintesis Vitamin D Anda mungkin lebih rendah. Pertimbangkan suplemen 1000IU atau tambahkan susu nabati yang diperkaya ke oats pagi Anda.</p>
+<button class="bg-surface-container-highest text-on-surface font-bold py-2 px-4 rounded-lg text-sm hover:bg-outline-variant/20 transition-colors" style="">
+                    Tambahkan ke pelacak kesehatan
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto py-12 bg-zinc-100 dark:bg-zinc-900 border-t-0 font-['Manrope'] text-sm tracking-wide">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto">
+<div class="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-6 md:mb-0" style="">NutriTrack</div>
+<div class="flex flex-wrap justify-center gap-8 mb-6 md:mb-0">
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 transition-opacity" href="#" style="">Kebijakan Privasi</a>
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 transition-opacity" href="#" style="">Syarat Layanan</a>
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 transition-opacity" href="#" style="">Hubungi Dukungan</a>
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 transition-opacity" href="#" style="">Jurnal</a>
+</div>
+<div class="text-zinc-400" style="">© 2024 Editorial Vitalitas NutriTrack. Hak cipta dilindungi undang-undang.</div>
+</div>
+</footer>
+</body></html>

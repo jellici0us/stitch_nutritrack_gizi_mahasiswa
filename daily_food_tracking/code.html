@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NutriTrack | Food Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#002204",
+                    "secondary-container": "#fc820c",
+                    "primary": "#006419",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#78dc77",
+                    "surface-container-low": "#f3f3f3",
+                    "on-secondary-fixed": "#311300",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "on-surface": "#1a1c1c",
+                    "on-surface-variant": "#40493d",
+                    "on-tertiary-fixed": "#0f2000",
+                    "tertiary-fixed": "#b9f474",
+                    "on-primary-container": "#cbffc2",
+                    "on-background": "#1a1c1c",
+                    "surface-container-highest": "#e2e2e2",
+                    "primary-container": "#127f27",
+                    "inverse-on-surface": "#f1f1f1",
+                    "tertiary-fixed-dim": "#9ed75b",
+                    "surface-container": "#eeeeee",
+                    "outline-variant": "#bfcaba",
+                    "on-secondary-container": "#5e2c00",
+                    "on-tertiary-fixed-variant": "#2e4f00",
+                    "secondary-fixed": "#ffdcc6",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f9f9f9",
+                    "primary-fixed": "#94f990",
+                    "surface-variant": "#e2e2e2",
+                    "outline": "#707a6c",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#386000",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "background": "#f9f9f9",
+                    "surface-tint": "#006e1c",
+                    "inverse-primary": "#78dc77",
+                    "on-secondary-fixed-variant": "#723600",
+                    "surface-dim": "#dadada",
+                    "on-primary-fixed-variant": "#005313",
+                    "inverse-surface": "#2f3131",
+                    "secondary-fixed-dim": "#ffb786",
+                    "secondary": "#964900",
+                    "tertiary-container": "#4a7b00",
+                    "on-tertiary-container": "#d6ffa5",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow { box-shadow: 0 12px 32px rgba(26, 28, 28, 0.06); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl shadow-[0_12px_32px_rgba(26,28,28,0.06)]">
+<div class="flex justify-between items-center px-8 h-20 max-w-7xl mx-auto w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black text-green-900 dark:text-green-100 italic font-headline tracking-tight">NutriTrack</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors font-headline font-bold tracking-tight" href="#">Dashboard</a>
+<a class="text-green-700 dark:text-green-400 border-b-2 border-green-600 pb-1 font-headline font-bold tracking-tight" href="#">Tracking</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors font-headline font-bold tracking-tight" href="#">Analysis</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors font-headline font-bold tracking-tight" href="#">Recommendations</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-zinc-600 font-semibold hover:opacity-80 transition-all duration-300 scale-95 active:scale-90">Log In</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:opacity-80 transition-all duration-300 scale-95 active:scale-90">Sign Up</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<!-- Dashboard Header / Vitality Summary -->
+<section class="mb-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2">
+<h1 class="text-display-lg font-headline font-extrabold tracking-tight text-on-surface mb-2">Daily Vitality Log</h1>
+<p class="text-body-lg text-on-surface-variant max-w-xl">Curating your nutritional journey for today. Every choice is a step toward your vibrant self.</p>
+</div>
+<div class="glass-card p-6 rounded-xl border border-white/20 relative overflow-hidden flex flex-col justify-between editorial-shadow">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+<div class="flex justify-between items-start">
+<span class="label-md font-bold text-primary tracking-wider uppercase">Calorie Budget</span>
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<div class="mt-4">
+<span class="text-4xl font-headline font-black text-on-surface">1,420</span>
+<span class="text-on-surface-variant font-medium ml-2">/ 2,200 kcal</span>
+</div>
+<div class="w-full bg-primary-fixed h-3 rounded-full mt-4 overflow-hidden">
+<div class="bg-primary h-full w-[64%] rounded-full"></div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left Column: Search & Log -->
+<div class="lg:col-span-5 space-y-8">
+<div class="bg-surface-container-low p-8 rounded-xl space-y-6">
+<h2 class="text-headline-md font-headline font-bold text-on-surface">Add Entry</h2>
+<!-- Search Field -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border-none rounded-xl focus:ring-2 focus:ring-primary/50 transition-all font-body" placeholder="Search food database..." type="text"/>
+</div>
+<!-- Quick Add Tags -->
+<div class="flex flex-wrap gap-2">
+<button class="bg-surface-container-highest px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-fixed transition-colors">Avocado Toast</button>
+<button class="bg-surface-container-highest px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-fixed transition-colors">Oat Milk</button>
+<button class="bg-surface-container-highest px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-fixed transition-colors">Greek Yogurt</button>
+<button class="bg-surface-container-highest px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-fixed transition-colors">Espresso</button>
+</div>
+<!-- Portion Selector Visual Mockup -->
+<div class="bg-surface-container-lowest p-6 rounded-xl space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-bold">Portion Size</span>
+<span class="text-primary font-bold">1.5 cups</span>
+</div>
+<input class="w-full accent-primary h-2 bg-surface-container-high rounded-full appearance-none" type="range"/>
+<div class="flex justify-between text-xs text-outline font-bold">
+<span>0.5</span>
+<span>1.0</span>
+<span>1.5</span>
+<span>2.0</span>
+<span>2.5</span>
+</div>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container py-4 rounded-full font-black text-lg editorial-shadow scale-95 active:scale-90 transition-transform">Log to Daily Diary</button>
+</div>
+<!-- Featured Nutrition Card -->
+<div class="relative h-64 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="vibrant healthy salad bowl with fresh greens, nuts and berries in natural bright lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSoqMNuckBnss6jsr95EFREsKkB6aUEQS4EB4f0Y1CoG48wm9D_OrIIhDjjbpnJ8S1ydytBpr1CHLYofQYUkatBaXF5nSvw2OAZCj4lDkvszEzLWLVzIOva4Kd-LhpyFOk3OT2Xag256xBAMFt8gUNG_oamcoH1hJZIg51tL4rzGohiuWtie_sRnDUAe6pe_gsRmrwBt__o0Jl2poZUeh5bQ18DFVaJoGFHJ-I_JXRhLcCkAn6NcV10jna5-BrCTf6ICbXQGXlbInu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent flex flex-col justify-end p-6">
+<span class="label-md font-bold text-secondary-fixed mb-1">Editor's Choice</span>
+<h3 class="text-white font-headline font-bold text-xl">The Power of Micro-nutrients in Leafy Greens</h3>
+<p class="text-white/80 text-sm mt-2">Read the full article in our Journal</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Meal Diary -->
+<div class="lg:col-span-7 space-y-10">
+<!-- Macro Breakdown Strip -->
+<div class="flex justify-between items-center p-6 bg-surface-container-low rounded-xl">
+<div class="flex flex-col items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-outline mb-1">Protein</span>
+<span class="text-lg font-headline font-extrabold">82g</span>
+<div class="w-12 h-1 bg-primary rounded-full mt-1"></div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-outline mb-1">Carbs</span>
+<span class="text-lg font-headline font-extrabold">145g</span>
+<div class="w-12 h-1 bg-secondary-container rounded-full mt-1"></div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-outline mb-1">Fats</span>
+<span class="text-lg font-headline font-extrabold">42g</span>
+<div class="w-12 h-1 bg-tertiary-container rounded-full mt-1"></div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-outline mb-1">Water</span>
+<span class="text-lg font-headline font-extrabold">1.8L</span>
+<div class="w-12 h-1 bg-blue-500 rounded-full mt-1"></div>
+</div>
+</div>
+<!-- Meal Sections -->
+<div class="space-y-12">
+<!-- Breakfast -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<h3 class="text-2xl font-headline font-extrabold tracking-tight">Breakfast</h3>
+<span class="text-on-surface-variant font-bold">420 kcal</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl editorial-shadow">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close up of a bowl of oats with blueberries and nuts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbmxkeZsfglj38fKpNcROvojPMWQAGw-fbTs8W01SDaQUiyucsbVD8Gi-fLOBKv_KWcl8CtHMpSXP6V-pDRWKuv4xz_REFikzPeG540vtuK3w_gMGAL0b9zrvKIIqDfamRMTI8-tzdoliK4qRNOgf6A44OHBSKd_wPoGITH14cLxNldFJYKyQDY62-0Xnwv3EvxrUv5RX9Rl2825RJ0vwZdLpHZn3yMBamqTjR5D7jPKAoBe3An9dcZOpH8IVMN5AhmhJZ0qWifehr"/>
+</div>
+<div>
+<h4 class="font-bold">Overnight Oats with Blueberries</h4>
+<p class="text-xs text-on-surface-variant font-medium">1 bowl (250g)</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-headline font-bold">310</span>
+<button class="material-symbols-outlined text-outline hover:text-error transition-colors">close</button>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl editorial-shadow">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="latte art in a ceramic cup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3v8KsPFCO5Kf8zAbqAlVDWIaFAVclOsHZulLGnRTGFckgA4Ilx0fHGhEzVYy38CKdrEZU-l4sX056yKdN01a2bk1Cf_rTZ2P7vuQuv-Ol9DySAEoEhQencrCWVUcVmakJ_w-4nx-ITDLq8vQlzyWmX-4_BHEGX1mvcyCiKrKXRD8uJ0Av6_x3PC0k90PBjjqq8XzdilBzuFg0fS-8Xi3YfPibd1xeJc8rwh9SIY8xstgR5VxLOLVrshg6PIPIyFt2BVjzgGddhl79"/>
+</div>
+<div>
+<h4 class="font-bold">Flat White w/ Oat Milk</h4>
+<p class="text-xs text-on-surface-variant font-medium">Large (350ml)</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-headline font-bold">110</span>
+<button class="material-symbols-outlined text-outline hover:text-error transition-colors">close</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Lunch -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<h3 class="text-2xl font-headline font-extrabold tracking-tight">Lunch</h3>
+<span class="text-on-surface-variant font-bold">680 kcal</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl editorial-shadow">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="grilled chicken salad with mixed vegetables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyP3j8KYFnOiMynLznQA-00b2g-GxYe8YDDZp3eNADnOuWNCxMx3y16PbhTayg96uHJiZNjVZt2_QbB3ha6Dg8kdqCKzatbhHpTM5XpNuLsbbAy8ObKCYIIbMOU67lSpaJ2FNaxOs5Bc2Sjch7S7lCiG89YHoFQvqhYYJYJD6LuqztD-hXUMTucba2LQRRrtZtyfR9xRhFJHouizQ6Ii1i7_Gsrkdpw2u2qm69pBPyNlAcTI03JNJ-AQS7DTM8eLa7CU59FKI69yw7"/>
+</div>
+<div>
+<h4 class="font-bold">Mediterranean Quinoa Bowl</h4>
+<p class="text-xs text-on-surface-variant font-medium">Standard portion</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-headline font-bold">680</span>
+<button class="material-symbols-outlined text-outline hover:text-error transition-colors">close</button>
+</div>
+</div>
+<button class="w-full py-4 border-2 border-dashed border-outline-variant rounded-xl text-outline font-bold flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">add</span> Add item to Lunch
+                            </button>
+</div>
+</section>
+<!-- Dinner (Placeholder) -->
+<section class="opacity-50">
+<div class="flex justify-between items-end mb-6">
+<h3 class="text-2xl font-headline font-extrabold tracking-tight">Dinner</h3>
+<span class="text-on-surface-variant font-bold">0 kcal</span>
+</div>
+<div class="p-8 bg-surface-container rounded-xl border border-dashed border-outline-variant flex flex-col items-center justify-center gap-3">
+<span class="material-symbols-outlined text-4xl text-outline-variant">restaurant</span>
+<p class="text-on-surface-variant font-bold">Plan your evening meal</p>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-100 dark:bg-zinc-900 w-full mt-auto py-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto">
+<div class="mb-6 md:mb-0">
+<span class="text-lg font-bold text-zinc-900 dark:text-zinc-100 font-headline">NutriTrack</span>
+<p class="text-zinc-500 text-sm mt-2 font-body">© 2024 NutriTrack Vitality Editorial. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-sm tracking-wide text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 font-body transition-opacity" href="#">Privacy Policy</a>
+<a class="text-sm tracking-wide text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 font-body transition-opacity" href="#">Terms of Service</a>
+<a class="text-sm tracking-wide text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 font-body transition-opacity" href="#">Contact Support</a>
+<a class="text-sm tracking-wide text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 font-body transition-opacity" href="#">Journal</a>
+</div>
+</div>
+</footer>
+<!-- FAB for Quick Log (Mobile only or Global Context) -->
+<button class="fixed bottom-8 right-8 bg-primary text-on-primary w-16 h-16 rounded-full editorial-shadow flex items-center justify-center scale-95 active:scale-90 transition-transform md:hidden">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>

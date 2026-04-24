@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Analisis Detail - Vitality</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#ffdcc6",
+                      "on-background": "#1a1c1c",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#005313",
+                      "on-tertiary-fixed-variant": "#2e4f00",
+                      "surface-container-high": "#e8e8e8",
+                      "primary-fixed": "#94f990",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#d6ffa5",
+                      "on-secondary-container": "#5e2c00",
+                      "tertiary": "#386000",
+                      "on-primary": "#ffffff",
+                      "primary": "#006419",
+                      "surface": "#f9f9f9",
+                      "surface-tint": "#006e1c",
+                      "surface-container-low": "#f3f3f3",
+                      "inverse-surface": "#2f3131",
+                      "surface-container": "#eeeeee",
+                      "on-surface": "#1a1c1c",
+                      "on-error": "#ffffff",
+                      "on-primary-container": "#cbffc2",
+                      "inverse-primary": "#78dc77",
+                      "background": "#f9f9f9",
+                      "secondary-fixed-dim": "#ffb786",
+                      "tertiary-fixed-dim": "#9ed75b",
+                      "secondary-container": "#fc820c",
+                      "outline-variant": "#bfcaba",
+                      "on-primary-fixed": "#002204",
+                      "secondary": "#964900",
+                      "on-secondary-fixed": "#311300",
+                      "primary-container": "#127f27",
+                      "on-secondary-fixed-variant": "#723600",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#f9f9f9",
+                      "surface-variant": "#e2e2e2",
+                      "inverse-on-surface": "#f1f1f1",
+                      "outline": "#707a6c",
+                      "on-surface-variant": "#40493d",
+                      "surface-container-highest": "#e2e2e2",
+                      "tertiary-fixed": "#b9f474",
+                      "primary-fixed-dim": "#78dc77",
+                      "tertiary-container": "#4a7b00",
+                      "surface-dim": "#dadada",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#0f2000",
+                      "surface-container-lowest": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Plus Jakarta Sans"],
+                      "body": ["Manrope"],
+                      "label": ["Manrope"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased mb-24">
+<!-- TopAppBar Execution -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#f9f9f9]/80 backdrop-blur-md shadow-[0_12px_32px_rgba(26,28,28,0.04)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a healthy young woman with natural sunlight and soft park background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPyVOPzTrw0RDlYP4Yf4MpXfkZ51ZtryUkLnpt40kFWWVPmx1oeZZTX2ZYJ2z6vwZJMzvFBqynVkcpHM-s2nO0xXIRJAQnOXmrIoaGT0Uy3OZDa1gOD4vVarOJLiM393AV7vbd93fhoEon0-Wox6smSTqu2rp2bnHM44JgZTP5SGDXu4y0KFWGdC_FpRC5kmtoCCIXp-qKT9NKeRcH3CWC0ft-vMzG0u10x7QpU9jpDzfVNt8j8ZaQt_RzJJsoaySx9_-TYHlH4dR7"/>
+</div>
+<h1 class="font-['Plus_Jakarta_Sans'] tracking-tight text-xl font-black text-zinc-900 leading-none">Vitality</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#006419] transition-opacity hover:opacity-80 active:scale-95">notifications</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="mt-20 px-6 space-y-8 pb-12">
+<!-- Header Editorial Section -->
+<section class="space-y-1">
+<h2 class="text-4xl font-extrabold tracking-tighter text-on-surface">Analisis Vitalitas</h2>
+<div class="flex items-center gap-2">
+<span class="bg-primary-fixed/30 text-primary font-bold px-3 py-1 rounded-full text-xs uppercase tracking-widest">Laporan Mingguan</span>
+<span class="text-on-surface-variant font-medium text-sm">24 Okt - 31 Okt</span>
+</div>
+</section>
+<!-- BMI Card (Vitality Glass Style) -->
+<div class="relative overflow-hidden bg-surface-container-lowest/70 backdrop-blur-xl rounded-3xl p-6 shadow-[0_12px_32px_rgba(26,28,28,0.06)] group">
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-3xl transition-transform group-hover:scale-125"></div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="font-['Manrope'] text-[11px] font-semibold uppercase tracking-widest text-on-surface-variant mb-1">Indeks Massa Tubuh</p>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-black text-on-surface tracking-tighter">22.4</span>
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Rentang Sehat</span>
+</div>
+</div>
+</div>
+<div class="space-y-3">
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary-container w-[20%]"></div>
+<div class="h-full bg-primary w-[40%] relative">
+<!-- Indicator -->
+<div class="absolute left-[35%] -top-1 w-1.5 h-5 bg-on-surface rounded-full shadow-lg border-2 border-white"></div>
+</div>
+<div class="h-full bg-secondary-container w-[25%] opacity-50"></div>
+<div class="h-full bg-error w-[15%] opacity-50"></div>
+</div>
+<div class="flex justify-between text-[10px] font-bold text-on-surface-variant uppercase tracking-tight">
+<span>Kurang</span>
+<span>Optimal</span>
+<span>Lebih</span>
+<span>Obesitas</span>
+</div>
+</div>
+</div>
+<!-- TDEE & Metabolic Card (Bento Style) -->
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 bg-surface-container-lowest p-6 rounded-3xl space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container">bolt</span>
+</div>
+<h3 class="font-bold text-lg tracking-tight">Energi Harian (TDEE)</h3>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-black tracking-tighter text-on-surface">2.450</span>
+<span class="text-on-surface-variant font-bold text-sm tracking-tight uppercase">kkal/hari</span>
+</div>
+<div class="space-y-4 pt-2">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Metabolisme Basal</span>
+<span class="font-bold">1.820 kkal</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-low rounded-full">
+<div class="h-full bg-primary-container w-[74%] rounded-full"></div>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Pembakaran Aktivitas</span>
+<span class="font-bold">630 kkal</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-low rounded-full">
+<div class="h-full bg-secondary-container w-[26%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Macro Profile (Donut Chart Aesthetic) -->
+<section class="bg-surface-container-low rounded-3xl p-6 space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-bold tracking-tight">Profil Makro</h3>
+<span class="material-symbols-outlined text-on-surface-variant">pie_chart</span>
+</div>
+<div class="flex items-center gap-8">
+<!-- Circular Chart Representation -->
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<circle class="stroke-primary-container" cx="18" cy="18" fill="none" r="16" stroke-dasharray="30 100" stroke-width="4"></circle>
+<circle class="stroke-secondary-container" cx="18" cy="18" fill="none" r="16" stroke-dasharray="50 100" stroke-dashoffset="-30" stroke-width="4"></circle>
+<circle class="stroke-primary" cx="18" cy="18" fill="none" r="16" stroke-dasharray="20 100" stroke-dashoffset="-80" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-xs font-bold text-on-surface-variant">TOTAL</span>
+<span class="text-lg font-black leading-none">100%</span>
+</div>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary-container"></div>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Protein</span>
+<span class="font-black">180g <span class="text-xs font-normal text-on-surface-variant">/ 30%</span></span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary-container"></div>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Karbohidrat</span>
+<span class="font-black">300g <span class="text-xs font-normal text-on-surface-variant">/ 50%</span></span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Lemak</span>
+<span class="font-black">53g <span class="text-xs font-normal text-on-surface-variant">/ 20%</span></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Micronutrients Section -->
+<section class="space-y-6">
+<h3 class="text-xl font-bold tracking-tight">Sintesis Mikronutrisi</h3>
+<div class="grid grid-cols-1 gap-6">
+<!-- Row of Microbars -->
+<div class="space-y-5">
+<!-- Vit D - Kurang -->
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<span class="font-bold text-sm">Vitamin D</span>
+<span class="text-[11px] font-extrabold text-error uppercase">Kurang 45%</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error w-[45%] rounded-full"></div>
+</div>
+</div>
+<!-- Vit C - Mencukupi -->
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<span class="font-bold text-sm">Vitamin C</span>
+<span class="text-[11px] font-extrabold text-primary uppercase">Mencukupi 112%</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full rounded-full"></div>
+</div>
+</div>
+<!-- B12 -->
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<span class="font-bold text-sm">B12</span>
+<span class="text-[11px] font-extrabold text-primary uppercase">Mencukupi 98%</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[98%] rounded-full"></div>
+</div>
+</div>
+<!-- Magnesium -->
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<span class="font-bold text-sm">Magnesium</span>
+<span class="text-[11px] font-extrabold text-primary uppercase">Mencukupi 88%</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[88%] rounded-full"></div>
+</div>
+</div>
+<!-- Iron - Berlebih -->
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<span class="font-bold text-sm">Zat Besi</span>
+<span class="text-[11px] font-extrabold text-secondary-container uppercase">Berlebih 140%</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-full rounded-full"></div>
+</div>
+</div>
+<!-- Zinc -->
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<span class="font-bold text-sm">Seng</span>
+<span class="text-[11px] font-extrabold text-primary uppercase">Mencukupi 105%</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tip Box -->
+<div class="bg-primary-fixed/20 p-5 rounded-2xl flex gap-4">
+<span class="material-symbols-outlined text-primary-container shrink-0">lightbulb</span>
+<div class="space-y-1">
+<p class="text-xs font-bold uppercase tracking-widest text-primary-container">Tip Sintesis</p>
+<p class="text-sm leading-relaxed text-on-surface-variant">Tingkatkan asupan lemak sehat untuk membantu penyerapan Vitamin D yang optimal pagi ini.</p>
+</div>
+</div>
+<!-- Featured Article Card -->
+<div class="relative h-64 rounded-[2rem] overflow-hidden group shadow-xl">
+<img alt="Healthy Fruits" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A vibrant high-end editorial shot of fresh citrus fruits and green leaves on a minimalist white surface with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_iYWJ6sW3jcSTDo8KmRENp8sOmcgbCWvQzTQMIuYM19EgowZSJWymTVPhVmLzKKsqJ6kjaTdpU3M6S52PByHMEYok1HBU86dVCtI8OSLTGOqW-MJ-jkDOJlTJvFwIVDNce98BwtxWQA2FA04Yw7SHzXoRtrlmGeL6jawwszsjuHdvE23Kaw3xP7S08Zxk-Yz-EnPbV3ifUXMbzL4yKSSwdyPVp5jTdxdR0O7_nM32CTnRbMjR2q3YN-RNSmMEtXd_MmUmCNxZ-qgq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent flex flex-col justify-end p-8">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider w-max mb-3">Health Editorial</span>
+<h4 class="text-2xl font-extrabold text-white leading-tight tracking-tight mb-2">Energi Berkelanjutan</h4>
+<p class="text-white/80 text-sm font-medium">Strategi nutrisi untuk performa kognitif harian Anda.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Execution -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-8 bg-[#f9f9f9]/80 backdrop-blur-xl shadow-[0_-8px_24px_rgba(26,28,28,0.04)] rounded-t-3xl">
+<!-- Dashboard Inactive -->
+<a class="flex flex-col items-center justify-center text-zinc-400 px-4 py-2 hover:text-[#006419] transition-all active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">grid_view</span>
+<span class="font-['Manrope'] text-[11px] font-semibold uppercase tracking-widest">Dashboard</span>
+</a>
+<!-- Tracking Inactive -->
+<a class="flex flex-col items-center justify-center text-zinc-400 px-4 py-2 hover:text-[#006419] transition-all active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">add_circle</span>
+<span class="font-['Manrope'] text-[11px] font-semibold uppercase tracking-widest">Tracking</span>
+</a>
+<!-- Analysis Active -->
+<a class="flex flex-col items-center justify-center text-[#006419] bg-green-100/40 rounded-2xl px-4 py-2 transition-all active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-['Manrope'] text-[11px] font-semibold uppercase tracking-widest">Analysis</span>
+</a>
+<!-- Curated Inactive -->
+<a class="flex flex-col items-center justify-center text-zinc-400 px-4 py-2 hover:text-[#006419] transition-all active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">auto_awesome</span>
+<span class="font-['Manrope'] text-[11px] font-semibold uppercase tracking-widest">Curated</span>
+</a>
+</nav>
+</body></html>

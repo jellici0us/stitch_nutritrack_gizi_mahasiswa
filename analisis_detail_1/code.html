@@ -1,0 +1,316 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Analisis Nutrisi | NutriTrack</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#002204",
+                      "secondary-container": "#fc820c",
+                      "primary": "#006419",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#78dc77",
+                      "surface-container-low": "#f3f3f3",
+                      "on-secondary-fixed": "#311300",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#f9f9f9",
+                      "on-surface": "#1a1c1c",
+                      "on-surface-variant": "#40493d",
+                      "on-tertiary-fixed": "#0f2000",
+                      "tertiary-fixed": "#b9f474",
+                      "on-primary-container": "#cbffc2",
+                      "on-background": "#1a1c1c",
+                      "surface-container-highest": "#e2e2e2",
+                      "primary-container": "#127f27",
+                      "inverse-on-surface": "#f1f1f1",
+                      "tertiary-fixed-dim": "#9ed75b",
+                      "surface-container": "#eeeeee",
+                      "outline-variant": "#bfcaba",
+                      "on-secondary-container": "#5e2c00",
+                      "on-tertiary-fixed-variant": "#2e4f00",
+                      "secondary-fixed": "#ffdcc6",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#f9f9f9",
+                      "primary-fixed": "#94f990",
+                      "surface-variant": "#e2e2e2",
+                      "outline": "#707a6c",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#386000",
+                      "on-tertiary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "background": "#f9f9f9",
+                      "surface-tint": "#006e1c",
+                      "inverse-primary": "#78dc77",
+                      "on-secondary-fixed-variant": "#723600",
+                      "surface-dim": "#dadada",
+                      "on-primary-fixed-variant": "#005313",
+                      "inverse-surface": "#2f3131",
+                      "secondary-fixed-dim": "#ffb786",
+                      "secondary": "#964900",
+                      "tertiary-container": "#4a7b00",
+                      "on-tertiary-container": "#d6ffa5",
+                      "on-secondary": "#ffffff",
+                      "surface-container-high": "#e8e8e8",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Plus Jakarta Sans"],
+                      "body": ["Manrope"],
+                      "label": ["Manrope"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl shadow-[0_12px_32px_rgba(26,28,28,0.06)]">
+<div class="flex justify-between items-center px-8 h-20 max-w-7xl mx-auto w-full">
+<div class="text-2xl font-black text-green-900 dark:text-green-100 italic font-['Plus_Jakarta_Sans'] tracking-tight" style="">
+                NutriTrack
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors font-['Plus_Jakarta_Sans'] font-bold tracking-tight" href="#" style="">Beranda</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors font-['Plus_Jakarta_Sans'] font-bold tracking-tight" href="#" style="">Pecatatan Makanan</a>
+<a class="text-green-700 dark:text-green-400 border-b-2 border-green-600 pb-1 font-['Plus_Jakarta_Sans'] font-bold tracking-tight" href="#" style="">Analisis Gizi</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors font-['Plus_Jakarta_Sans'] font-bold tracking-tight" href="#" style="">Rekomendasi</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-zinc-600 font-semibold hover:opacity-80 transition-all duration-300" style="">Masuk</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold scale-95 active:scale-90 transition-transform" style="">Daftar</button>
+</div>
+</div>
+</nav>
+<main class="flex-grow pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto w-full">
+<!-- Editorial Header -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<span class="bg-secondary-container/20 text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold tracking-wider mb-4 inline-block" style="">LAPORAN MINGGUAN</span>
+<h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter text-on-surface mb-4" style="">Catatan Asupan Mingguan</h1>
+<p class="text-on-surface-variant text-lg font-medium leading-relaxed" style="">Catat makanan yang Anda konsumsi hari ini untuk memantau asupan gizi harian.</p>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant bg-surface-container-low px-4 py-2 rounded-xl">
+<span class="material-symbols-outlined text-primary" style="">calendar_today</span>
+<span class="font-bold" style="">24 Okt - 31 Okt</span>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- BMI & Composition Card (Bento Large) -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-xl p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8">
+<span class="material-symbols-outlined text-4xl text-primary/10" style="">monitor_weight</span>
+</div>
+<div class="relative z-10">
+<h3 class="text-2xl font-extrabold tracking-tight mb-8" style="">Indeks Massa Tubuh (IMT)</h3>
+<div class="flex items-baseline gap-4 mb-2">
+<span class="text-6xl font-black text-primary" style="">22.4</span>
+<span class="text-on-surface-variant font-bold text-xl" style=""><br></span>
+</div>
+<div class="w-full h-3 bg-surface-container-low rounded-full mb-8 relative">
+<div class="absolute h-6 w-1 bg-on-surface top-1/2 -translate-y-1/2 left-[40%] rounded-full z-20"></div>
+<div class="flex h-full w-full rounded-full overflow-hidden">
+<div class="w-[18%] bg-secondary-container/30"></div>
+<div class="w-[32%] bg-primary/40"></div>
+<div class="w-[20%] bg-secondary-container/30"></div>
+<div class="w-[30%] bg-error/20"></div>
+</div>
+</div>
+<div class="grid grid-cols-4 text-[10px] font-bold text-on-surface-variant tracking-widest uppercase mb-10">
+<span class="" style="">Kurang</span>
+<span class="" style="">normal</span>
+<span class="" style="">overweight</span>
+<span class="" style="">Obesitas</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" data-weight="fill" style="">info</span>
+<p class="text-sm text-on-surface-variant" style="">IMT adalah alat skrining, bukan diagnostik lemak tubuh atau kesehatan. Nilai saat ini mencerminkan baseline metabolik optimal untuk tinggi badan Anda.</p>
+</div>
+</div>
+</div>
+<!-- TDEE & Energy Card -->
+<div class="md:col-span-5 bg-primary-container text-on-primary-container rounded-xl p-8 flex flex-col justify-between">
+<div>
+<h3 class="text-2xl font-extrabold tracking-tight mb-2 text-white" style="">Kebutuhan Energi Harian</h3>
+<p class="text-on-primary-container/80 text-sm mb-8" style="">Estimasi total pengeluaran energi harian berdasarkan tingkat metabolisme aktif.</p>
+<div class="text-7xl font-black mb-2 text-white" style="">2,450</div>
+<div class="text-xl font-bold opacity-90" style="">kkal / hari</div>
+</div>
+<div class="mt-8 space-y-4">
+<div class="flex justify-between items-center bg-white/10 p-4 rounded-xl">
+<span class="font-bold" style="">Metabolisme Basal</span>
+<span class="font-black" style="">1,820</span>
+</div>
+<div class="flex justify-between items-center bg-white/10 p-4 rounded-xl">
+<span class="font-bold" style="">Pembakaran Aktivitas</span>
+<span class="font-black" style="">630</span>
+</div>
+</div>
+</div>
+<!-- Micronutrient Breakdown (Detailed Table/List) -->
+<div class="md:col-span-12 bg-surface-container-low rounded-xl p-8">
+<h3 class="text-2xl font-extrabold tracking-tight mb-8" style="">Asupan Mikronutrien</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Vitamin Stack -->
+<div class="space-y-6">
+<h4 class="text-sm font-black uppercase tracking-widest text-on-surface-variant" style="">Vitamin</h4>
+<div class="space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-bold">
+<span class="" style="">Vitamin D</span>
+<span class="text-error" style="">Kurang (45%)</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-bold">
+<span class="" style="">Vitamin C</span>
+<span class="text-primary" style="">Mencukupi (112%)</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-bold">
+<span class="" style="">B12</span>
+<span class="text-primary" style="">Mencukupi (98%)</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 98%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Minerals Stack -->
+<div class="space-y-6">
+<h4 class="text-sm font-black uppercase tracking-widest text-on-surface-variant" style="">Mineral</h4>
+<div class="space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-bold">
+<span class="" style="">Magnesium</span>
+<span class="text-primary" style="">Mencukupi (88%)</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-bold">
+<span class="" style="">Zat Besi</span>
+<span class="text-secondary" style="">Berlebih (140%)</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-bold">
+<span class="" style="">Seng</span>
+<span class="text-primary" style="">Mencukupi (105%)</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Editorial Advice Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/15 flex flex-col justify-center">
+<span class="material-symbols-outlined text-secondary-container mb-4 text-3xl" style="">lightbulb</span>
+<h5 class="text-lg font-bold mb-2" style="">Tips</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Kadar Vitamin D Anda berada di bawah baseline. Pertimbangkan 15 menit sinar matahari pagi langsung atau masukkan ikan berlemak ke dalam rencana makan Selasa Anda.</p>
+</div>
+</div>
+</div>
+<!-- Macro Distribution (Asymmetric Graphic) -->
+<div class="md:col-span-5 bg-surface-container-lowest rounded-xl p-8">
+<h3 class="text-2xl font-extrabold tracking-tight mb-8" style="">Profil Makro</h3>
+<div class="relative w-48 h-48 mx-auto mb-10">
+<!-- Simple CSS Donut implementation for visuals -->
+<div class="w-full h-full rounded-full border-[16px] border-primary-container relative">
+<div class="absolute inset-0 rounded-full border-[16px] border-secondary-container border-t-transparent border-l-transparent -rotate-45"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-black" style="">2.4k</span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase" style="">Total Kal</span>
+</div>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="font-bold text-sm" style="">Protein</span>
+</div>
+<span class="font-black" style="">180g (30%)</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+<span class="font-bold text-sm" style="">Karbohidrat</span>
+</div>
+<span class="font-black" style="">300g (50%)</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-zinc-400"></div>
+<span class="font-bold text-sm" style="">Lemak</span>
+</div>
+<span class="font-black" style="">53g (20%)</span>
+</div>
+</div>
+</div>
+<!-- Nutritional Trend Image (The "Vitality Glass" look) -->
+<div class="md:col-span-7 rounded-xl overflow-hidden relative group h-[400px]">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent z-10 mix-blend-multiply"></div>
+<img alt="Nutrisi Sehat" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern high-end flat lay of fresh green vegetables and vibrant healthy ingredients in soft editorial morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-fvYHzpqCUoocN1HuBBqkA5I1haXiW2my4oedoJOZ625PWsOHuj7XPxXdqe6adGUV7fYta8isqlcH7QpvisDaa23mvIri6cJa4GOpehIHOtCiFKQlp6pi80Vafk2M6-qjg8RhQH4_RMX-_mm21SsG_0wi606bCY1aBmdqRbzBq4zaAiNDCd0KZUXT_6kCBwYKElpNYlyPcng72e_1MU28AeeALUSndGo__cRibO-OV17ltVRJE9TyUxQQX9r9Z-txn-V7Zia8X60z" style="">
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black/80 to-transparent">
+<h4 class="text-white text-3xl font-black mb-2" style="">Energi Berkelanjutan</h4>
+<p class="text-white/80 max-w-md" style="">Menjaga kepadatan kalori yang konsisten adalah kunci untuk menghindari lonjakan insulin di sore hari. Tren Anda saat ini menunjukkan stabilitas 15% lebih baik dari minggu lalu.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Section -->
+<footer class="bg-zinc-100 dark:bg-zinc-900 w-full mt-auto py-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-bold text-zinc-900 dark:text-zinc-100 font-['Plus_Jakarta_Sans'] mb-2" style="">NutriTrack</div>
+<p class="text-zinc-500 text-sm max-w-xs font-['Manrope'] tracking-wide" style="">Solusi cerdas pengelolaan gizi untuk generasi digital.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="flex gap-6">
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 font-['Manrope'] text-sm tracking-wide transition-opacity" href="#" style="">Kebijakan Privasi</a>
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 font-['Manrope'] text-sm tracking-wide transition-opacity" href="#" style="">Ketentuan Layanan</a>
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 font-['Manrope'] text-sm tracking-wide transition-opacity" href="#" style="">Hubungi Dukungan</a>
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 font-['Manrope'] text-sm tracking-wide transition-opacity" href="#" style="">Jurnal</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+<p class="text-zinc-400 text-xs font-['Manrope'] tracking-wide" style="">© 2024 NutriTrack Vitality Editorial. Hak cipta dilindungi undang-undang.</p>
+</div>
+</footer>
+</body></html>

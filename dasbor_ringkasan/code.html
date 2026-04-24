@@ -1,0 +1,324 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dasbor NutriTrack | Editorial Vitalitas</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#002204",
+                    "secondary-container": "#fc820c",
+                    "primary": "#006419",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#78dc77",
+                    "surface-container-low": "#f3f3f3",
+                    "on-secondary-fixed": "#311300",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "on-surface": "#1a1c1c",
+                    "on-surface-variant": "#40493d",
+                    "on-tertiary-fixed": "#0f2000",
+                    "tertiary-fixed": "#b9f474",
+                    "on-primary-container": "#cbffc2",
+                    "on-background": "#1a1c1c",
+                    "surface-container-highest": "#e2e2e2",
+                    "primary-container": "#127f27",
+                    "inverse-on-surface": "#f1f1f1",
+                    "tertiary-fixed-dim": "#9ed75b",
+                    "surface-container": "#eeeeee",
+                    "outline-variant": "#bfcaba",
+                    "on-secondary-container": "#5e2c00",
+                    "on-tertiary-fixed-variant": "#2e4f00",
+                    "secondary-fixed": "#ffdcc6",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f9f9f9",
+                    "primary-fixed": "#94f990",
+                    "surface-variant": "#e2e2e2",
+                    "outline": "#707a6c",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#386000",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "background": "#f9f9f9",
+                    "surface-tint": "#006e1c",
+                    "inverse-primary": "#78dc77",
+                    "on-secondary-fixed-variant": "#723600",
+                    "surface-dim": "#dadada",
+                    "on-primary-fixed-variant": "#005313",
+                    "inverse-surface": "#2f3131",
+                    "secondary-fixed-dim": "#ffb786",
+                    "secondary": "#964900",
+                    "tertiary-container": "#4a7b00",
+                    "on-tertiary-container": "#d6ffa5",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .vitality-glass {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+        .vitality-glass::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(0, 100, 25, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl shadow-[0_12px_32px_rgba(26,28,28,0.06)]">
+<div class="flex justify-between items-center px-8 h-20 max-w-7xl mx-auto w-full">
+<div class="text-2xl font-black text-green-900 dark:text-green-100 italic font-['Plus_Jakarta_Sans'] tracking-tight" style="">
+                NutriTrack
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-bold tracking-tight">
+<a class="text-green-700 dark:text-green-400 border-b-2 border-green-600 pb-1 transition-all duration-300" href="#" style="">Beranda</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors transition-all duration-300" href="#" style="">Pencatatan Makanan</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors transition-all duration-300" href="#" style="">Analisis Gizi</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors transition-all duration-300" href="#" style="">Rekomendasi</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block text-green-800 dark:text-green-400 font-semibold hover:opacity-80 transition-all duration-300 scale-95 active:scale-90" style="">Masuk</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:opacity-80 transition-all duration-300 scale-95 active:scale-90" style="">Daftar</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-20 px-6 max-w-7xl mx-auto w-full">
+<!-- Hero Summary Section -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-primary font-bold tracking-widest label-md uppercase mb-2 block" style="">ringkasan asupan gizi</span>
+<h1 class="text-5xl font-extrabold tracking-tight text-on-surface" style="">Halo, (Username)</h1>
+<p class="text-on-surface-variant text-lg mt-2 max-w-lg" style="">Lihat ringkasan asupan makanan dan gizi harian Anda di sini!</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:opacity-80 transition-all scale-95 active:scale-90" style="">
+<span class="material-symbols-outlined" data-icon="add" style="font-variation-settings: &quot;FILL&quot; 0;">add</span>
+                    Catat Makanan
+                </button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Vitality Glass: Calorie Counter -->
+<div class="md:col-span-8 vitality-glass p-8 rounded-xl shadow-[0_12px_32px_rgba(26,28,28,0.06)] flex flex-col md:flex-row items-center gap-10">
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-primary rounded-full" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-dasharray="552.92" stroke-dashoffset="138" stroke-width="12"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-4xl font-extrabold" style="">1.850</span>
+<span class="text-on-surface-variant label-md" style="">Dikonsumsi</span>
+</div>
+</div>
+<div class="flex-grow space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-2xl font-bold" style="">Sisa Kebutuhan Kalori</h2>
+<p class="text-on-surface-variant" style="">Jumlah kalori yang masih bisa dikonsumsi sesuai kebutuhan harian.</p>
+</div>
+<div class="text-right">
+<span class="text-3xl font-black text-primary" style="">450</span>
+<span class="block label-md text-on-surface-variant font-bold" style="">KCAL tersisa</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 border-t-0 pt-4">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block label-md text-on-surface-variant mb-1" style="">Kebutuhan Kalori Harian</span>
+<span class="text-xl font-bold" style="">2.300</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block label-md text-on-surface-variant mb-1" style="">Kalori Terbakar</span>
+<span class="text-xl font-bold text-secondary" style="">+350</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block label-md text-on-surface-variant mb-1" style="">Total kalori</span>
+<span class="text-xl font-bold" style="">1.500</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Macronutrient Breakdown -->
+<div class="md:col-span-4 bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(26,28,28,0.06)] flex flex-col justify-between">
+<h3 class="text-xl font-bold mb-6" style="">Keseimbangan Makro</h3>
+<div class="space-y-6">
+<!-- Protein -->
+<div class="space-y-2">
+<div class="flex justify-between label-md font-bold">
+<span class="" style="">Protein</span>
+<span class="text-on-surface-variant" style="">142g / 180g</span>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[78%]"></div>
+</div>
+</div>
+<!-- Carbs -->
+<div class="space-y-2">
+<div class="flex justify-between label-md font-bold">
+<span class="" style="">Karbohidrat</span>
+<span class="text-on-surface-variant" style="">210g / 250g</span>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-[84%]"></div>
+</div>
+</div>
+<!-- Fats -->
+<div class="space-y-2">
+<div class="flex justify-between label-md font-bold">
+<span class="" style="">Lemak</span>
+<span class="text-on-surface-variant" style="">52g / 65g</span>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full w-[80%]"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 p-4 bg-tertiary-fixed rounded-xl text-on-tertiary-fixed flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="lightbulb" style="font-variation-settings: &quot;FILL&quot; 1;">lightbulb</span>
+<p class="text-sm font-medium" style="">Protein rendah hari ini. Cobalah minum shake setelah kuliah.</p>
+</div>
+</div>
+<!-- Weight Progress Chart -->
+<div class="md:col-span-12 lg:col-span-7 bg-surface-container-low p-8 rounded-xl relative overflow-hidden h-[400px]">
+<div class="flex justify-between items-start mb-8 relative z-10">
+<div>
+<h3 class="text-2xl font-bold" style="">Evolusi Berat Badan</h3>
+<p class="text-on-surface-variant" style="">Melacak program lean bulk 12 minggu Anda.</p>
+</div>
+<div class="bg-surface-container-lowest px-4 py-2 rounded-lg text-sm font-bold shadow-sm" style="">
+                        Sekarang: 78.4 kg
+                    </div>
+</div>
+<!-- Mock Chart Area -->
+<div class="absolute bottom-0 left-0 w-full h-2/3 px-8 pb-8 flex items-end justify-between gap-2">
+<div class="w-full bg-primary/10 h-32 rounded-t-lg relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-on-surface text-surface text-xs py-1 px-2 rounded" style="">Sen</div>
+</div>
+<div class="w-full bg-primary/20 h-40 rounded-t-lg relative group"></div>
+<div class="w-full bg-primary/30 h-36 rounded-t-lg relative group"></div>
+<div class="w-full bg-primary/40 h-44 rounded-t-lg relative group"></div>
+<div class="w-full bg-primary/60 h-48 rounded-t-lg relative group"></div>
+<div class="w-full bg-primary/80 h-52 rounded-t-lg relative group"></div>
+<div class="w-full bg-primary h-60 rounded-t-lg relative group"></div>
+</div>
+<!-- Data Visualization Image -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="pola geometris abstrak dengan kurva mengalir lembut dalam nuansa hijau hutan dan abu-abu berkabut yang mewakili tren data" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9Ejm1PGOabFFz8czFxFSFH2rj2Vfa7TYfKs2IwiQDGzcBiZoLALBnXocM2raIlMZXxwYSryq8exE7ysbZfmVlk88YPZDws5J6Q0XQntE3yhvDxLkos00SAp1djxqxIxRXd3pMCuq4HGsq5glz7pQdHR8SR5Xb6osqV2BFLOVzWFhf11nIDEWkYZQb5DHOZmKuHyuv1jldAndRn6XL4hzfBFW0b3MF_yW0c9de73xTNOPDBQLkWUszr4envBWZDkSb7iQv2Gbpzx7r" style="">
+</div>
+</div>
+<!-- Student Meal Plan Suggestions -->
+<div class="md:col-span-12 lg:col-span-5 bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(26,28,28,0.06)]">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold" style="">Energi untuk Ujian</h3>
+<span class="text-primary font-bold text-sm cursor-pointer" style="">Lihat Semua</span>
+</div>
+<div class="space-y-4">
+<div class="group flex items-center gap-4 p-4 hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="semangkuk gandum sehat semalaman dengan blueberry segar dan potongan almond dalam toples kaca" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW6X8Oy-bOkUv-NW78swRPTPsKo2r2aocq45NNJPR2YRgs5qja_c9S5PSUs9k-Z6pXOA_RwKkbQt3LRCa9c-8PnUKWKkh5SLeSi31hQVu7axNXBq5fLQpLX8wzS7rXuEMgTRe9D6un5CI3Jt7CDZHXWoJG4Rci60OpTxbxMeP_kQKV3X5dednW93K7_RoaZxfAdGzf3oQHf2lGTwRo2O_HmAE2egOOX0SdW9Nwma-L2gu2IjDzFntswLAtx0Nyx0X3j-DBWVITeZ8L" style="">
+</div>
+<div class="flex-grow">
+<h4 class="font-bold" style="">Gandum Belajar Semalam</h4>
+<p class="text-sm text-on-surface-variant" style="">Tinggi karbohidrat, pelepasan energi stabil.</p>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right" style="">chevron_right</span>
+</div>
+<div class="group flex items-center gap-4 p-4 hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="salad quinoa mediterania yang cerah dengan buncis, mentimun dan tomat ceri dalam mangkuk keramik putih" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0qOo0IEevIzxfWKE3jfk44kSRnOAKW9uaXlT97iAT-LttnsVzO2tV9pDx7DgPO2_Fn6Qbauf1pvxLI8f_vp7ucLsVADJXweysecYisxbmtiUcpFsnyt-lEBuqhofbVfznmymj1M67OOQu3ndaESyZu5u-F40BIShd-Xm38el4ckcXdMLFpkmV8YVilFoaMVnSY3Tky29wa1Kn-4SGioZ5CXslt-hIJGR4zvOZreuajTsYIjzOn2M0hmJexuH__KjVg9F5eOmtcQ46" style="">
+</div>
+<div class="flex-grow">
+<h4 class="font-bold" style="">Quinoa Power Bowl</h4>
+<p class="text-sm text-on-surface-variant" style="">Ramah persiapan makan di bawah Rp 80rb.</p>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right" style="">chevron_right</span>
+</div>
+<div class="group flex items-center gap-4 p-4 hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="yogurt yunani vanila protein tinggi yang lezat dengan granola dan irisan stroberi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJehUd8C68IL5S4kB9o17eB-WbUiFzgvkl682RLpMjlkxrEbRiryGVQsrzI6gNgnGy_xpP4Bm04klWI61dF_E1Mlla-mVf_k29g-uf0kDi0ZXa8Uu3Q1OsCOyFENHGJ0NRePC41ih_zip3WLQMGYgakl2e4ws8q_v-jbrkj6nZ5xmd6iBDDRzkolZvnHCmk6tkhvg30VQBm7tL9GcTHHRUNMGhRkFiUu__Dy9VHiZ2ItWiLX2C2GAMxQx3HA-9-Ln8gZG1vubcCY40" style="">
+</div>
+<div class="flex-grow">
+<h4 class="font-bold" style="">Parfait Yogurt Yunani</h4>
+<p class="text-sm text-on-surface-variant" style="">Asupan protein cepat antar praktikum.</p>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right" style="">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto py-12 bg-zinc-100 dark:bg-zinc-900 font-['Manrope'] text-sm tracking-wide">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto w-full gap-6">
+<div class="text-lg font-bold text-zinc-900 dark:text-zinc-100" style="">
+                Editorial Vitalitas NutriTrack
+            </div>
+<div class="flex gap-6">
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 transition-opacity" href="#" style="">Kebijakan Privasi</a>
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 transition-opacity" href="#" style="">Ketentuan Layanan</a>
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 transition-opacity" href="#" style="">Dukungan Kontak</a>
+<a class="text-zinc-500 hover:text-green-600 hover:underline decoration-green-500/30 underline-offset-4 transition-opacity" href="#" style="">Jurnal</a>
+</div>
+<div class="text-zinc-500 text-xs" style="">
+                © 2024 Editorial Vitalitas NutriTrack. Hak cipta dilindungi undang-undang.
+            </div>
+</div>
+</footer>
+<!-- Mobile Bottom Navigation (Visible on mobile only) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full bg-white/80 backdrop-blur-xl flex justify-around items-center py-4 z-50">
+<a class="flex flex-col items-center text-green-700 font-semibold" href="#" style="">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: &quot;FILL&quot; 1;">dashboard</span>
+<span class="text-[10px]" style="">Dasbor</span>
+</a>
+<a class="flex flex-col items-center text-zinc-500" href="#" style="">
+<span class="material-symbols-outlined" data-icon="nutrition" style="font-variation-settings: &quot;FILL&quot; 0;">nutrition</span>
+<span class="text-[10px]" style="">Makanan</span>
+</a>
+<a class="flex flex-col items-center text-zinc-500" href="#" style="">
+<span class="material-symbols-outlined" data-icon="monitoring" style="font-variation-settings: &quot;FILL&quot; 0;">monitoring</span>
+<span class="text-[10px]" style="">Statistik</span>
+</a>
+<a class="flex flex-col items-center text-zinc-500" href="#" style="">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: &quot;FILL&quot; 0;">person</span>
+<span class="text-[10px]" style="">Profil</span>
+</a>
+</div>
+</body></html>
